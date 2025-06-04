@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/sell.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <title>Sell Property</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="home.html">Logo</a>
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="buy.html">Buy</a></li>
+          <li><a href="rent.html">Rent</a></li>
+          <li><a href="#" id="mapLink">Map</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="sell-page.html">Sell Real Estate</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <a href="login.html" target="_blank">
+          <button id="loginBtn" class="login-btn">Login</button>
+        </a>
+        <a href="sign-up.html" target="_blank">
+          <button id="signupBtn" class="signup-btn">Sign-up</button>
+        </a>
+        <a href="profile.html" id="profileLink" style="display: none">
+          <img src="images/account (1).png" alt="" />
+        </a>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1>Sell Your Property</h1>
+      <form id="sellForm">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required /><br /><br />
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required /><br /><br />
+
+        <label for="price">Price ($):</label>
+        <input type="number" id="price" name="price" required /><br /><br />
+
+        <label for="bedrooms">Bedrooms:</label>
+        <input
+          type="number"
+          id="bedrooms"
+          name="bedrooms"
+          required
+        /><br /><br />
+
+        <label for="bathrooms">Bathrooms:</label>
+        <input
+          type="number"
+          id="bathrooms"
+          name="bathrooms"
+          required
+        /><br /><br />
+
+        <label>Select property location on map:</label>
+        <div id="map" style="height: 300px; margin-bottom: 20px"></div>
+
+        <label for="description">Description:</label><br />
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          cols="50"
+        ></textarea
+        ><br /><br />
+
+        <button type="submit">Submit Listing</button>
+      </form>
+
+      <div id="message" style="margin-top: 20px"></div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <a href="#">Logo</a>
+        </div>
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025</p>
+      </div>
+    </footer>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const currentUser = localStorage.getItem("currentUser");
+        if (!currentUser) {
+          alert("Please login first");
+          window.location.href = "login.html";
+        } else {
+          const user = JSON.parse(currentUser);
+        }
+      });
+    </script>
+    <script src="js/sell.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags and title -->
+    <meta charset="UTF-8" />
+    <title>Map of Properties</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheets and Leaflet CSS -->
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Leaflet JS library for map rendering -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <!-- Map container styling -->
+    <style>
+      #map {
+        height: 500px;
+        width: 90%;
+        margin: 100px auto 50px auto;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header section with logo and navigation -->
+    <header>
+      <div class="logo">
+        <a href="home.html">Logo</a>
+      </div>
+      <nav class="nav">
+        <ul>
+          <!-- Navigation links -->
+          <li><a href="buy.html">Buy</a></li>
+          <li><a href="rent.html">Rent</a></li>
+          <li><a href="maps.html">Map</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="sell-page.html">Sell Real Estate</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <!-- Login and signup buttons -->
+        <a href="login.html" target="_blank">
+          <button id="loginBtn" class="login-btn">Login</button>
+        </a>
+        <a href="sign-up.html" target="_blank">
+          <button id="signupBtn" class="signup-btn">Sign-up</button>
+        </a>
+        <!-- Profile icon (only visible after login) -->
+        <a href="profile.html" id="profileLink" style="display: none">
+          <img src="images/account (1).png" alt="" />
+        </a>
+        <!-- Menu toggle for mobile -->
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+      </div>
+    </header>
+
+    <!-- Page title and map section -->
+    <div class="container">
+      <h1 style="text-align: center; margin-top: 30px">Properties Map View</h1>
+      <div id="map">Loading map...</div>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+      <div class="footer-container">
+        <!-- Footer logo and sections -->
+        <div class="footer-logo"><a href="#">Logo</a></div>
+        <div class="footer-section">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Email</a></li>
+            <li><a href="#">Phone</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Real Estate App</p>
+      </div>
+    </footer>
+
+    <!-- Script for rendering Leaflet map and loading properties from JSON -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Initialize the map centered on Kazakhstan
+        const map = L.map("map").setView([48.0, 67.0], 5);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+        }).addTo(map);
+
+        // Load property markers from JSON file
+        fetch("data/properties.json")
+          .then((res) => {
+            if (!res.ok) throw new Error("Failed to load properties.");
+            return res.json();
+          })
+          .then((listings) => {
+            // Loop through each property and add to map
+            listings.forEach((p) => {
+              if (p.lat && p.lng) {
+                L.marker([p.lat, p.lng])
+                  .addTo(map)
+                  .bindPopup(
+                    `<b>${p.address}, ${p.city}</b><br>Price: $${p.price}<br>Bedrooms: ${p.bedrooms}<br>Bathrooms: ${p.bathrooms}<br>${p.description}`
+                  );
+              }
+            });
+          })
+          .catch((err) => {
+            alert("Error loading property data: " + err.message);
+          });
+      });
+    </script>
+
+    <!-- Script to check if user is logged in before accessing the map page -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const currentUser = localStorage.getItem("currentUser");
+        if (!currentUser) {
+          alert("Please login first");
+          window.location.href = "login.html";
+        } else {
+          const user = JSON.parse(currentUser);
+        }
+      });
+    </script>
+
+    <!-- Custom site-wide JavaScript -->
+    <script src="js/script.js"></script>
+    
+  </body>
+</html>

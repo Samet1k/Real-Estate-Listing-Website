@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/news.css" />
+    <title>News</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <a href="home.html">Logo</a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="buy.html">Buy</a></li>
+            <li><a href="rent.html">Rent</a></li>
+            <li><a href="maps.html">Map</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="sell-page.html">Sell Real Estate</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <a href="login.html" target="_blank">
+            <button id="loginBtn" class="login-btn">Login</button>
+          </a>
+          <a href="sign-up.html" target="_blank">
+            <button id="signupBtn" class="signup-btn">Sign-up</button>
+          </a>
+          <a href="profile.html" id="profileLink" style="display: none">
+            <img src="images/account (1).webp" alt="" loading="lazy" />
+          </a>
+          <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        </div>
+      </header>
+    </div>
+
+    <div class="main-container">
+      <main class="news-main my-5">
+        <h1 class="text-center mb-5">Latest News</h1>
+
+        <div class="news-grid row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="news-item">
+              <img
+                src="images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.webp"
+                alt="news image"
+                class="img-fluid rounded"
+                loading="lazy"
+              />
+              <h2>Breaking News: Real Estate Market Trends</h2>
+              <p class="date">April 21, 2025</p>
+              <p class="excerpt">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+                tincidunt arcu eget velit...
+              </p>
+              <a href="#" class="read-more">Read more</a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="news-item">
+              <img
+                src="images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.webp"
+                alt="news image"
+                class="img-fluid rounded"
+                loading="lazy"
+              />
+              <h2>Top 5 Neighborhoods to Invest In</h2>
+              <p class="date">April 18, 2025</p>
+              <p class="excerpt">
+                Sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam...
+              </p>
+              <a href="#" class="read-more">Read more</a>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="news-item">
+              <img
+                src="images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.webp"
+                alt="news image"
+                class="img-fluid rounded"
+                loading="lazy"
+              />
+              <h2>How to Sell Your Property Fast in 2025</h2>
+              <p class="date">April 15, 2025</p>
+              <p class="excerpt">
+                Quis ipsum suspendisse ultrices gravida dictum fusce ut
+                placerat. Enim praesent elementum facilisis leo...
+              </p>
+              <a href="#" class="read-more">Read more</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <a href="#">Logo</a>
+        </div>
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const currentUser = localStorage.getItem("currentUser");
+        if (!currentUser) {
+          alert("Please login first");
+          window.location.href = "login.html";
+        } else {
+          const user = JSON.parse(currentUser);
+        }
+      });
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

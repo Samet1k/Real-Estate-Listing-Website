@@ -1,0 +1,289 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-size: 16px;
+    background-color: rgb(28, 27, 27);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Property Listings */
+.property-listings {
+  padding: 0px 20px;
+}
+
+.property-listings h2 {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 10px; 
+  padding: 10px;
+  
+  
+
+}
+
+
+.card {
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: #222;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    scroll-snap-align: start;
+}
+
+.card:hover {
+    transform: translateY(-10px);   
+} 
+
+.card-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.card button {
+  padding: 10px;
+  background-color: #e7007d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #890049;
+}
+
+
+.buy-rent-hero {
+  height: 60vh; /* Высота блока — весь экран */
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение элементов */
+  justify-content: center; /* Центрируем по вертикали */
+  align-items: center; /* Центрируем по горизонтали */
+  margin-top: 0; /* Убираем отступ сверху */
+  gap: 15px; /* Расстояние между элементами внутри */
+}
+
+.for-buy {
+  max-height: 40vh;
+}
+
+.for-rent {
+  margin-bottom: -120px;
+}
+
+
+button {
+  background-color: #e7007d;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #890049;
+}
+
+p {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+#generateNumberBtn {
+  margin-top: 15px;
+}
+
+
+
+
+
+/* Responsive media queries for best layout adaptation across devices */
+
+/* Extra small phones (up to 400px) */
+@media (max-width: 400px) {
+  body {
+    font-size: 14px;
+  }
+  .logo a {
+    font-size: 18px;
+  }
+  .auth-buttons img {
+    width: 22px;
+    height: 22px;
+  }
+  .menu-toggle {
+    font-size: 22px;
+  }
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+  .card-content h2 {
+    font-size: 16px;
+  }
+  .card-content p,
+  .card button {
+    font-size: 13px;
+  }
+  .footer-logo a,
+  .footer-section h3,
+  .footer-section ul li a,
+  .footer-bottom p {
+    font-size: 13px;
+  }
+}
+
+/* Small phones (401px - 575px) */
+@media (min-width: 401px) and (max-width: 575px) {
+  .logo a {
+    font-size: 20px;
+  }
+  .menu-toggle {
+    font-size: 24px;
+  }
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+  .card-content h2 {
+    font-size: 17px;
+  }
+  .card-content p {
+    font-size: 14px;
+  }
+  .card button {
+    font-size: 14px;
+  }
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small tablets (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  header {
+    padding: 15px 25px;
+  }
+  .logo a {
+    font-size: 24px;
+  }
+  .menu-toggle {
+    font-size: 26px;
+  }
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .card-content h2 {
+    font-size: 18px;
+  }
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  header {
+    padding: 18px 35px;
+  }
+  .logo a {
+    font-size: 26px;
+  }
+  .menu-toggle {
+    font-size: 28px;
+  }
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  .card-content h2 {
+    font-size: 20px;
+  }
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small laptops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  header {
+    padding: 20px 40px;
+  }
+  .logo a {
+    font-size: 28px;
+  }
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .footer-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large devices (1200px and up) */
+@media (min-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+  }
+  .footer-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

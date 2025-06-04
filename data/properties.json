@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "address": "Qabanbai Batyr 12",
+    "city": "Astana",
+    "price": 70000,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "description": "New apartment in Esil district",
+    "lat": 51.1605,
+    "lng": 71.4704
+  },
+  {
+    "id": 2,
+    "address": "Abay Street 34",
+    "city": "Almaty",
+    "price": 120000,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "description": "Private house with garden",
+    "lat": 43.2389,
+    "lng": 76.8897
+  },
+  {
+    "id": 3,
+    "address": "Tole Bi Street 88",
+    "city": "Shymkent",
+    "price": 95000,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "description": "Spacious apartment in city center",
+    "lat": 42.3417,
+    "lng": 69.5901
+  },
+  {
+    "id": 4,
+    "address": "Nazarbayev Ave 5",
+    "city": "Aktau",
+    "price": 60000,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "description": "Seaside apartment with view",
+    "lat": 43.6536,
+    "lng": 51.197
+  },
+  {
+    "id": 5,
+    "address": "Satpaev Street 11",
+    "city": "Karaganda",
+    "price": 80000,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "description": "Family house near school",
+    "lat": 49.8028,
+    "lng": 73.1022
+  }
+]

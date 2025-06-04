@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags and title -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    
+    <title>Real Estate Listing Website</title>
+  </head>
+
+  <body>
+    <!-- Header with navigation and authentication buttons -->
+    <div class="container">
+      <header>
+        <div class="logo">
+          <a href="home.html">Logo</a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <li><a href="buy.html">Buy</a></li>
+            <li><a href="rent.html">Rent</a></li>
+            <li><a href="maps.html">Map</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="sell-page.html">Sell Real Estate</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <!-- Login and signup buttons -->
+          <a href="login.html" target="_blank">
+            <button id="loginBtn" class="login-btn">Login</button>
+          </a>
+          <a href="sign-up.html" target="_blank">
+            <button id="signupBtn" class="signup-btn">Sign-up</button>
+          </a>
+          <!-- Hidden profile icon, shown after login -->
+          <a href="profile.html" id="profileLink" style="display: none">
+            <img src="images/account (1).png" alt="" />
+          </a>
+          <!-- Hamburger menu for mobile -->
+          <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Main content of profile page -->
+    <div class="main-container">
+      <h1>My Profile</h1>
+      <div class="profile-info">
+        <!-- User Full Name -->
+        <div class="profile-row">
+          <label><strong>Full Name:</strong></label>
+          <input type="text" id="fullname" value="-" readonly />
+          <button class="edit-btn" onclick="toggleEdit('fullname', this)">
+            Edit
+          </button>
+        </div>
+
+        <!-- User Email -->
+        <div class="profile-row">
+          <label><strong>Email Address:</strong></label>
+          <input type="email" id="email" value="-" readonly />
+          <button class="edit-btn" onclick="toggleEdit('email', this)">
+            Edit
+          </button>
+        </div>
+
+        <!-- User Phone -->
+        <div class="profile-row">
+          <label><strong>Phone number:</strong></label>
+          <input type="tel" id="phone" value="-" readonly />
+          <button class="edit-btn" onclick="toggleEdit('phone', this)">
+            Edit
+          </button>
+        </div>
+
+        <!-- User Password -->
+        <div class="profile-row">
+          <label><strong>Password:</strong></label>
+          <input type="password" id="password" value="password123" readonly />
+          <!-- Toggle password visibility -->
+          <button
+            class="edit-btn"
+            onclick="togglePassword()"
+            title="Show/Hide Password"
+          >
+            👁️
+          </button>
+          <!-- Edit password -->
+          <button class="edit-btn" onclick="toggleEdit('password', this)">
+            Edit
+          </button>
+        </div>
+      </div>
+
+      <!-- Link to user's listings -->
+      <a href="my-listings.html" class="listings-link">My Announcements</a>
+
+      <!-- Logout button -->
+      <div style="margin-top: 20px; text-align: center">
+        <button
+          onclick="logout()"
+          class="log-out-btn"
+          style="padding: 10px 20px"
+        >
+          Log Out
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <a href="#">Logo</a>
+        </div>
+        <!-- Footer links repeated for layout -->
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025</p>
+      </div>
+    </footer>
+
+    <!-- Check if user is logged in -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const currentUser = localStorage.getItem("currentUser");
+        if (!currentUser) {
+          alert("Please login first");
+          window.location.href = "login.html";
+        } else {
+          const user = JSON.parse(currentUser);
+        }
+      });
+    </script>
+
+    <!-- JS scripts for editing profile and shared behavior -->
+    <script src="js/profile.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

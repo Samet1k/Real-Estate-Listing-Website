@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Page metadata and styles -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/my-listings.css" />
+
+    <!-- Leaflet map styles and script -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <title>Real Estate Listing Website</title>
+  </head>
+
+  <body>
+    <!-- Header with navigation and auth buttons -->
+    <div class="container">
+      <header>
+        <div class="logo">
+          <a href="home.html">Logo</a>
+        </div>
+        <nav class="nav">
+          <ul>
+            <!-- Navigation links -->
+            <li><a href="buy.html">Buy</a></li>
+            <li><a href="rent.html">Rent</a></li>
+            <li><a href="maps.html">Map</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="sell-page.html">Sell Real Estate</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <!-- Auth controls -->
+          <a href="login.html" target="_blank">
+            <button id="loginBtn" class="login-btn">Login</button>
+          </a>
+          <a href="sign-up.html" target="_blank">
+            <button id="signupBtn" class="signup-btn">Sign-up</button>
+          </a>
+          <!-- Profile icon (hidden until login) -->
+          <a href="profile.html" id="profileLink" style="display: none">
+            <img src="images/account (1).png" alt="" />
+          </a>
+          <!-- Mobile menu toggle -->
+          <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Section showing user's property listings -->
+    <div class="listings-container">
+      <h1>My Announcements</h1>
+      <div id="listings"></div>
+    </div>
+
+    <!-- Map container -->
+    <div
+      id="map"
+      style="height: 500px; margin: 40px auto; width: 80%; border-radius: 10px"
+    ></div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <a href="#">Logo</a>
+        </div>
+        <!-- Repeated footer sections -->
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025</p>
+      </div>
+    </footer>
+
+    <!-- Map logic: display markers from localStorage data -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const map = L.map("map").setView([51.1605, 71.4704], 6); // Centered on Kazakhstan
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 24,
+        }).addTo(map);
+
+        const listingsJSON = localStorage.getItem("listings");
+        const listings = listingsJSON ? JSON.parse(listingsJSON) : [];
+
+        // Add marker for each listing with coordinates
+        listings.forEach((listing) => {
+          if (listing.lat && listing.lng) {
+            L.marker([listing.lat, listing.lng])
+              .addTo(map)
+              .bindPopup(
+                `<b>${listing.address}, ${listing.city}</b><br>Price: $${listing.price}<br>Bedrooms: ${listing.bedrooms}<br>Bathrooms: ${listing.bathrooms}`
+              );
+          }
+        });
+      });
+    </script>
+
+    <!-- Load and render listing cards -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const listingsDiv = document.getElementById("listings");
+        const listingsJSON = localStorage.getItem("listings");
+        const listings = listingsJSON ? JSON.parse(listingsJSON) : [];
+
+        // Show message if no listings found
+        if (listings.length === 0) {
+          listingsDiv.innerHTML =
+            '<p class="no-listings">Объявлений пока нет.</p>';
+          return;
+        }
+
+        // Render each listing to HTML
+        listingsDiv.innerHTML = listings
+          .map(
+            (listing) => `
+        <div class="listing-item">
+          <div class="listing-title">${listing.address}, ${listing.city}</div>
+          <div class="listing-details">
+            Цена: $${listing.price} | Спален: ${listing.bedrooms} | Ванных: ${listing.bathrooms}
+          </div>
+          <div class="listing-description">${listing.description || "-"}</div>
+        </div>
+      `
+          )
+          .join("");
+      });
+    </script>
+
+    <!-- Redirect to login page if user not authenticated -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const currentUser = localStorage.getItem("currentUser");
+        if (!currentUser) {
+          alert("Please login first");
+          window.location.href = "login.html";
+        } else {
+          const user = JSON.parse(currentUser);
+        }
+      });
+    </script>
+
+    <!-- External JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

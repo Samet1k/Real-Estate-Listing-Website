@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic HTML setup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="css/buy-rent.css" />
+    <link rel="stylesheet" href="css/header.css" />
+
+    <title>Buy Real Estate</title>
+  </head>
+
+  <body>
+    <!-- HEADER SECTION -->
+    <header>
+      <div class="logo">
+        <!-- Logo that links back to the home page -->
+        <a href="home.html">Logo</a>
+      </div>
+
+      <!-- Navigation menu -->
+      <nav class="nav">
+        <ul>
+          <li><a href="buy.html">Buy</a></li>
+          <li><a href="rent.html">Rent</a></li>
+          <li><a href="maps.html">Map</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="sell-page.html">Sell Real Estate</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </nav>
+
+      <!-- Login, Sign-up, and Profile button area -->
+      <div class="auth-buttons">
+        <a href="login.html" target="_blank">
+          <button id="loginBtn" class="login-btn">Login</button>
+        </a>
+        <a href="sign-up.html" target="_blank">
+          <button id="signupBtn" class="signup-btn">Sign-up</button>
+        </a>
+
+        <!-- Profile icon (hidden unless user is logged in) -->
+        <a href="profile.html" id="profileLink" style="display: none">
+          <img src="images/account (1).png" alt="" />
+        </a>
+
+        <!-- Hamburger menu icon for mobile navigation -->
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-container">
+      <!-- Hero banner for "Buy" page -->
+      <div class="buy-rent-hero for-buy">
+        <h1>Home purchase</h1>
+      </div>
+
+      <!-- Property listing section -->
+      <div class="property-listings">
+        <h2>Available Properties for Sale</h2>
+
+        <div class="card-container">
+          <!-- INDIVIDUAL PROPERTY CARDS -->
+          <!-- Each card represents one real estate listing -->
+
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/Custom-Luxury-Home-Dallas.webp"
+                alt="Property 1"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$1,200,000</h2>
+              <p>4 bed, 3 bath, 3500 sqft</p>
+              <button class="btn-more">More Details</button>
+            </div>
+          </div>
+
+          <!-- Repeatable cards for each property -->
+          <!-- You can generate these dynamically using JS in the future -->
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/Custom-Luxury-Home-Dallas.webp"
+                alt="Property 2"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$850,000</h2>
+              <p>3 bed, 2 bath, 2000 sqft</p>
+              <button class="btn-more">More Details</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/Custom-Luxury-Home-Dallas.webp"
+                alt="Property 1"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$1,200,000</h2>
+              <p>4 bed, 3 bath, 3500 sqft</p>
+              <button class="btn-more">More Details</button>
+            </div>
+          </div>
+
+          <!-- Repeatable cards for each property -->
+          <!-- You can generate these dynamically using JS in the future -->
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/Custom-Luxury-Home-Dallas.webp"
+                alt="Property 2"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$850,000</h2>
+              <p>3 bed, 2 bath, 2000 sqft</p>
+              <button class="btn-more">More Details</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/Custom-Luxury-Home-Dallas.webp"
+                alt="Property 1"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$1,200,000</h2>
+              <p>4 bed, 3 bath, 3500 sqft</p>
+              <button class="btn-more">More Details</button>
+            </div>
+          </div>
+
+          <!-- Repeatable cards for each property -->
+          <!-- You can generate these dynamically using JS in the future -->
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/Custom-Luxury-Home-Dallas.webp"
+                alt="Property 2"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$850,000</h2>
+              <p>3 bed, 2 bath, 2000 sqft</p>
+              <button class="btn-more">More Details</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/Custom-Luxury-Home-Dallas.webp"
+                alt="Property 1"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$1,200,000</h2>
+              <p>4 bed, 3 bath, 3500 sqft</p>
+              <button class="btn-more">More Details</button>
+            </div>
+          </div>
+
+          <!-- Repeatable cards for each property -->
+          <!-- You can generate these dynamically using JS in the future -->
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/Custom-Luxury-Home-Dallas.webp"
+                alt="Property 2"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$850,000</h2>
+              <p>3 bed, 2 bath, 2000 sqft</p>
+              <button class="btn-more">More Details</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/Custom-Luxury-Home-Dallas.webp"
+                alt="Property 1"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$1,200,000</h2>
+              <p>4 bed, 3 bath, 3500 sqft</p>
+              <button class="btn-more">More Details</button>
+            </div>
+          </div>
+
+          <!-- Repeatable cards for each property -->
+          <!-- You can generate these dynamically using JS in the future -->
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/Custom-Luxury-Home-Dallas.webp"
+                alt="Property 2"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$850,000</h2>
+              <p>3 bed, 2 bath, 2000 sqft</p>
+              <button class="btn-more">More Details</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/Custom-Luxury-Home-Dallas.webp"
+                alt="Property 1"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$1,200,000</h2>
+              <p>4 bed, 3 bath, 3500 sqft</p>
+              <button class="btn-more">More Details</button>
+            </div>
+          </div>
+
+          <!-- Repeatable cards for each property -->
+          <!-- You can generate these dynamically using JS in the future -->
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/Custom-Luxury-Home-Dallas.webp"
+                alt="Property 2"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$850,000</h2>
+              <p>3 bed, 2 bath, 2000 sqft</p>
+              <button class="btn-more">More Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+      <div class="footer-container">
+        <!-- Website footer logo -->
+        <div class="footer-logo"><a href="#">Logo</a></div>
+
+        <!-- Footer sections with repeatable links -->
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Two more identical sections (can be customized later) -->
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2025</p>
+      </div>
+    </footer>
+
+    <!-- LOGIN CHECK SCRIPT -->
+    <script>
+      // This script checks if a user is logged in by checking localStorage
+      document.addEventListener("DOMContentLoaded", () => {
+        const currentUser = localStorage.getItem("currentUser");
+        if (!currentUser) {
+          alert("Please login first");
+          window.location.href = "login.html"; // redirect if not logged in
+        }
+      });
+    </script>
+
+    <!-- Custom JS file -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

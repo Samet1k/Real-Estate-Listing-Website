@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic meta setup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <title>Real Estate Listing Website</title>
+  </head>
+
+  <body>
+    <!-- Main page container -->
+    <div class="container">
+      <header>
+        <!-- Logo -->
+        <div class="logo">
+          <a href="home.html">Logo</a>
+        </div>
+
+        <!-- Navigation bar -->
+        <nav class="nav">
+          <ul>
+            <li><a href="buy.html">Buy</a></li>
+            <li><a href="rent.html">Rent</a></li>
+            <li><a href="maps.html">Map</a></li>
+            <!-- Note: mismatch later ("msp.html") -->
+            <li><a href="news.html">News</a></li>
+            <li><a href="sell-page.html">Sell Real Estate</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+          </ul>
+        </nav>
+
+        <!-- Authentication buttons + profile icon -->
+        <div class="auth-buttons">
+          <!-- Login button -->
+          <a href="login.html" target="_blank">
+            <button id="loginBtn" class="login-btn">Login</button>
+          </a>
+          <!-- Sign-up button -->
+          <a href="sign-up.html" target="_blank">
+            <button id="signupBtn" class="signup-btn">Sign-up</button>
+          </a>
+          <!-- Hidden profile icon (can be shown using JavaScript) -->
+          <a href="profile.html" id="profileLink" style="display: none">
+            <img src="images/account (1).webp" alt="" loading="lazy" />
+          </a>
+          <!-- Hamburger menu icon for mobile -->
+          <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Hero section (hidden by default) -->
+    <div class="hero">
+      <div class="content" style="display: none">
+        <h1>The #1 site real estate professionals trust</h1>
+
+        <!-- Quick access links -->
+        <ul class="hero-buttons">
+          <li><a href="buy.html">Buy</a></li>
+          <li><a href="rent.html">Rent</a></li>
+          <li><a href="sell-page.html">Sell</a></li>
+          <li><a href="msp.html">Map</a></li>
+          <!-- ⚠ Possible typo: should be "maps.html"? -->
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+
+        <!-- Search bar -->
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="Address, School, City, Zip or Neighborhood"
+          />
+          <button>Search</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newest Listings section -->
+    <div class="main-container container">
+      <div class="newest-listings">
+        <h1>Newest Listings</h1>
+        <div class="card-container">
+          <!-- Property cards (8 times same content for now) -->
+          <!-- You can later generate them dynamically using JavaScript -->
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.webp"
+                alt="image"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$500,000</h2>
+              <p>3 bed 1.5 bath 2 054sqft</p>
+              <button class="btn-more">More details</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.webp"
+                alt="image"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$500,000</h2>
+              <p>3 bed 1.5 bath 2 054sqft</p>
+              <button class="btn-more">More details</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.webp"
+                alt="image"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$500,000</h2>
+              <p>3 bed 1.5 bath 2 054sqft</p>
+              <button class="btn-more">More details</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.webp"
+                alt="image"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$500,000</h2>
+              <p>3 bed 1.5 bath 2 054sqft</p>
+              <button class="btn-more">More details</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.webp"
+                alt="image"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$500,000</h2>
+              <p>3 bed 1.5 bath 2 054sqft</p>
+              <button class="btn-more">More details</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.webp"
+                alt="image"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$500,000</h2>
+              <p>3 bed 1.5 bath 2 054sqft</p>
+              <button class="btn-more">More details</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.webp"
+                alt="image"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$500,000</h2>
+              <p>3 bed 1.5 bath 2 054sqft</p>
+              <button class="btn-more">More details</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.webp"
+                alt="image"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$500,000</h2>
+              <p>3 bed 1.5 bath 2 054sqft</p>
+              <button class="btn-more">More details</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.webp"
+                alt="image"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <h2>$500,000</h2>
+              <p>3 bed 1.5 bath 2 054sqft</p>
+              <button class="btn-more">More details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <!-- Footer logo -->
+        <div class="footer-logo">
+          <a href="#">Logo</a>
+        </div>
+
+        <!-- Footer sections (3 identical sections shown) -->
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Repeat for layout symmetry -->
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer bottom row -->
+      <div class="footer-bottom">
+        <p>&copy; 2025</p>
+      </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

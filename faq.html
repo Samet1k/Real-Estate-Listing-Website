@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata and page setup -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS for styling and accordion functionality -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS styles -->
+    <link rel="stylesheet" href="css/news.css" />
+    <link rel="stylesheet" href="css/header.css" />
+
+    <title>FAQ</title> <!-- Page title -->
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">
+        <!-- Logo that redirects to home page -->
+        <a href="home.html">Logo</a>
+      </div>
+
+      <!-- Navigation links -->
+      <nav class="nav">
+        <ul>
+          <li><a href="buy.html">Buy</a></li>
+          <li><a href="rent.html">Rent</a></li>
+          <li><a href="maps.html">Map</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="sell-page.html">Sell Real Estate</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </nav>
+
+      <!-- Authentication buttons: login, sign-up, profile -->
+      <div class="auth-buttons">
+        <a href="login.html" target="_blank">
+          <button id="loginBtn" class="login-btn">Login</button>
+        </a>
+        <a href="sign-up.html" target="_blank">
+          <button id="signupBtn" class="signup-btn">Sign-up</button>
+        </a>
+
+        <!-- Profile icon (hidden unless logged in) -->
+        <a href="profile.html" id="profileLink" style="display: none">
+          <img src="images/account (1).png" alt="Profile" loading="lazy" />
+        </a>
+
+        <!-- Hamburger icon for mobile menu -->
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+      </div>
+    </header>
+
+    <!-- MAIN FAQ CONTENT -->
+    <main class="faq-main my-5">
+      <h1 class="text-center mb-5">Frequently Asked Questions</h1>
+
+      <!-- Bootstrap accordion structure for collapsible FAQs -->
+      <div class="accordion" id="faqAccordion">
+        <!-- FAQ Item 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeadingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapseOne"
+              aria-expanded="true"
+              aria-controls="faqCollapseOne"
+            >
+              What is the best time to buy real estate?
+            </button>
+          </h2>
+          <div
+            id="faqCollapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="faqHeadingOne"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              The best time to buy real estate depends on the local market
+              conditions, but generally, late fall and winter tend to have less
+              competition.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeadingTwo">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapseTwo"
+              aria-expanded="false"
+              aria-controls="faqCollapseTwo"
+            >
+              How do I sell my property quickly?
+            </button>
+          </h2>
+          <div
+            id="faqCollapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="faqHeadingTwo"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              To sell your property quickly, ensure it's priced competitively,
+              presented well (clean and staged), and marketed effectively
+              through online platforms.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeadingThree">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapseThree"
+              aria-expanded="false"
+              aria-controls="faqCollapseThree"
+            >
+              What are closing costs in real estate?
+            </button>
+          </h2>
+          <div
+            id="faqCollapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="faqHeadingThree"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Closing costs can include title insurance, inspection fees,
+              attorney fees, and taxes. Typically, they range from 2% to 5% of
+              the home price.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faqHeadingFour">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#faqCollapseFour"
+              aria-expanded="false"
+              aria-controls="faqCollapseFour"
+            >
+              How do I finance my first home?
+            </button>
+          </h2>
+          <div
+            id="faqCollapseFour"
+            class="accordion-collapse collapse"
+            aria-labelledby="faqHeadingFour"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              You can finance your first home through a mortgage. Consider
+              different types of loans such as FHA, conventional, or VA loans,
+              and choose the one that fits your financial situation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <!-- Logo in footer -->
+        <div class="footer-logo">
+          <a href="#">Logo</a>
+        </div>
+
+        <!-- Repeating footer sections (can be customized) -->
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+
+        <!-- Same repeated section -->
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Section</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer copyright -->
+      <div class="footer-bottom">
+        <p>&copy; 2025</p>
+      </div>
+    </footer>
+
+    <!-- Redirect to login if user is not logged in -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const currentUser = localStorage.getItem("currentUser");
+        if (!currentUser) {
+          alert("Please login first");
+          window.location.href = "login.html";
+        }
+      });
+    </script>
+
+    <!-- Bootstrap JS (needed for accordion collapse) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

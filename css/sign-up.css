@@ -1,0 +1,73 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  font-size: 16px;
+  background-color: rgb(28, 27, 27);
+  width: 100%;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-image: url(/images/SuCasaDesign-Modern-9335be77ca0446c7883c5cf8d974e47c.jpg);
+  
+}
+
+
+
+
+
+.container {
+  max-width: 600px;
+  margin-top: 50px;
+  background-color: #890049;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  padding: 10px;
+}
+
+.btn-primary {
+  background-color: #e7007d;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #890049;
+}
+
+.form-check-label {
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  color: #fdfdfd;
+}
+
+.footer a {
+  color: #e7007d;
+  text-decoration: none;
+}

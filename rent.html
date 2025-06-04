@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/buy-rent.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <title>Rent Real Estate</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="home.html">Logo</a>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="rent.html">Rent</a></li>
+        <li><a href="#" id="mapLink">Map</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="sell-page.html">Sell Real Estate</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+      </ul>
+    </nav>
+    <div class="auth-buttons">
+      <a href="login.html" target="_blank">
+        <button id="loginBtn" class="login-btn">Login</button>
+      </a>
+      <a href="sign-up.html" target="_blank">
+        <button id="signupBtn" class="signup-btn">Sign-up</button>
+      </a>
+      <a href="profile.html" id="profileLink" style="display: none">
+        <img src="images/account (1).webp" alt="" loading="lazy" />
+      </a>
+      <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div class="buy-rent-hero for-rent">
+      <h1>Annual promotion - discount on rent!</h1>
+      <button id="generateNumberBtn">Get a discount</button>
+      <p id="numberResult"></p>
+      <p id="numberInfo"></p>
+    </div>
+
+    <div class="property-listings">
+      <h2>Available Properties for Rent</h2>
+      <div class="card-container">
+        <!-- 12 Cards (copy-paste with optimized images) -->
+        <!-- Example card -->
+        <div class="card">
+          <div class="card-img">
+            <img src="images/Custom-Luxury-Home-Dallas.webp" alt="Rent Property" loading="lazy" />
+          </div>
+          <div class="card-content">
+            <h2>$2,500/month</h2>
+            <p>2 bed, 1 bath, 1200 sqft</p>
+            <button class="btn-more">More Details</button>
+          </div>
+        </div>
+
+        <!-- Repeat same block for remaining 11 cards -->
+        <!-- Just duplicate above block 11 times as you had same image and content -->
+
+        <!-- ... (11 more cards with same structure) -->
+        ${Array(11).fill(`
+        <div class="card">
+          <div class="card-img">
+            <img src="images/Custom-Luxury-Home-Dallas.webp" alt="Rent Property" loading="lazy" />
+          </div>
+          <div class="card-content">
+            <h2>$2,500/month</h2>
+            <p>2 bed, 1 bath, 1200 sqft</p>
+            <button class="btn-more">More Details</button>
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo"><a href="#">Logo</a></div>
+      <div class="footer-section">
+        <h3>Section</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Section</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Section</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentUser = localStorage.getItem("currentUser");
+      if (!currentUser) {
+        alert("Please login first");
+        window.location.href = "login.html";
+      } else {
+        const user = JSON.parse(currentUser);
+      }
+    });
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-size: 16px;
+    background-color: rgb(28, 27, 27);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1270px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+/* Main section */
+.about-main {
+    margin: 50px 0;
+  }
+  
+  .about-intro h1 {
+    margin-top: 100px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-intro p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Team Section */
+  .about-team {
+    margin-top: 50px;
+  }
+  
+  .about-team h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .team-member h3 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .team-member p {
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-logo a {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-section ul li a:hover {
+    color: #e7007d;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 16px;
+    color: #aaa;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 579px) {
+
+    
+}
+
+@media (max-width: 768px) {
+
+
+}
+
+
+@media (max-width: 856px) {
+
+
+}
+
+
+
+
